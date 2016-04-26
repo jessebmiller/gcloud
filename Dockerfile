@@ -8,6 +8,7 @@ run /google-cloud-sdk/install.sh
 run /google-cloud-sdk/bin/gcloud components install kubectl
 
 env PATH $PATH:/google-cloud-sdk/bin
+env KUBECONFIG /root/.config/kube/config
 
 
 
