@@ -17,4 +17,5 @@ env PATH $PATH:/google-cloud-sdk/bin
 env KUBECONFIG /root/.config/kube/config
 env EDITOR=nano
 
-
+run mkdir /wd
+workdir wd
