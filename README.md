@@ -2,4 +2,4 @@
 
 mount in your config volume so gcloud can keep your credentials and config
 
-    docker run -it -v $DATA/csconfig:/root/.config jesse/gcloud:0.0.1
+    docker run -it -v $DATA/csconfig:/root/.config jesse/gcloud:145.0.0
