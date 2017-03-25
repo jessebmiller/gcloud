@@ -1,17 +1,15 @@
-from debian:jessie
+from alpine
 maintainer jesse@jessebmiller.com
 
-run apt-get update \
- && apt-get install -y \
+run apk --no-cache add \
             curl \
             nano \
-            python \
-            ssh
+            python
 
-# rebuild if the version file changes
-copy Version /Version
+env VERSION 148.0.1
 
-run curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-106.0.0-linux-x86_64.tar.gz | tar xvz --null
+run echo ${VERSION}
+run curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${VERSION}-linux-x86_64.tar.gz | tar xvz
 run /google-cloud-sdk/install.sh
 run /google-cloud-sdk/bin/gcloud components install kubectl
 

@@ -7,6 +7,9 @@ mount in your config volume so gcloud can keep your credentials and config
 # When gcloud is out of date
 
 The container just needs to be rebuilt so that gcloud is reinstalled. update the
-`Version` file with the new gcloud version to invalidate the layers.
+`VERSION` environment variable in the Dockerfile with the new gcloud version.
+
+When this is merged into master docker hub will rebuild and
+`jesse/gcloud:latest` will be up to date.
 
 Pull requests accepted.
